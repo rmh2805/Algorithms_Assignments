@@ -1,0 +1,15 @@
+3. d.
+    tFibPow(n) = 1 + tMatPow(n)
+
+    tMatPow(n) = (g + n - 2^g) * tSquareMatMult(L)
+        where g = floor(lg(n))
+
+    tSquareMatMult(a(s, s), b(s, s)) = s^2 * (s) = s^3
+    L is 2x2, so tSquareMatMult(L, L) = 8
+
+    So tMatPow(n) = 8 * (g + n - 2^g)
+    So tFibPow(n) = 1 + 8*(g + n - 2^g)
+                  = 1 + 8g + (8n - 2^(g + 3))
+                  = 8 * floor(lg(n)) + 8 * (n - 2^(floor(lg(n)))) + 1
+
+
